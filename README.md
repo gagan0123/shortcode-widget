@@ -34,3 +34,6 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 
 #### 1.1 ####
 * Reflecting the changes that have been done to the default text widget over the years
+
+#### 1.2 ####
+* Corrections in text domain and added one more string as translatable

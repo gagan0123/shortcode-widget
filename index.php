@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/shortcode-widget/
 Description: Adds a text-like widget that allows you to write shortcode in it. (Just whats missing in the default text widget)
 Author: Gagan Deep Singh
 Author URI: http://gagan.pro/
-Version: 1.1
+Version: 1.2
 Text Domain: shortcode-widget
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
