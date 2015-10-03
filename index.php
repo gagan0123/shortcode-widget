@@ -10,7 +10,7 @@ Text Domain: shortcode-widget
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 
-define('SHORTCODE_WIDGET_TEXT_DOMAIN','shortcode_widget');
+define('SHORTCODE_WIDGET_TEXT_DOMAIN','shortcode-widget');
 
 require_once('class-shortcode-widget.php');
 
@@ -26,6 +26,6 @@ add_action('plugins_loaded','shortcode_widget_load_text_domain');
 
 add_shortcode('shortcode_widget_test', 'shortcode_widget_test_output');
 function shortcode_widget_test_output($args){
-	return "It works";
+	return __( "It works" , SHORTCODE_WIDGET_TEXT_DOMAIN );
 }
 ?>
