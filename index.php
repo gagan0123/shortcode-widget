@@ -28,4 +28,3 @@ add_shortcode('shortcode_widget_test', 'shortcode_widget_test_output');
 function shortcode_widget_test_output($args){
 	return __( "It works" , SHORTCODE_WIDGET_TEXT_DOMAIN );
 }
-?>
