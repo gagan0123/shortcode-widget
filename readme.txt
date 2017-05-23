@@ -1,10 +1,8 @@
 === Shortcode Widget ===
 Contributors: gagan0123
 Tags: Shortcode, Widget
-Requires at least: 3.1
-Tested up to: 4.3.1
 Requires at least: 3.3
-Tested up to: 4.0
+Tested up to: 4.7.5
 Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,3 +40,7 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 
 = 1.2 =
 * Corrections in text domain and added one more string as translatable
+
+= 1.3 =
+* Minor bug fix
+* Changed tested up to version number
