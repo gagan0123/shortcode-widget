@@ -37,3 +37,8 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 
 #### 1.2 ####
 * Corrections in text domain and added one more string as translatable
+
+#### 1.3 ####
+* Minor bug fix
+* Changed tested up to version number
+* Made it translation ready, constant was being used for text domains, silly error, I know :)
