@@ -32,6 +32,7 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 * Added icon and screenshots
 * Escaping some values that could have been overridden by the translations
 * Added pot file for translations
+* Change in calling of widget_text filter with new parameter that was added in WordPress 4.4.1
 
 = 1.4 =
 * Updated compatibility with WordPress 4.8
