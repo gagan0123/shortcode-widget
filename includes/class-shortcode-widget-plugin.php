@@ -75,7 +75,7 @@ if ( !class_exists( 'Shortcode_Widget_Plugin' ) ) {
 			add_action( 'widgets_init', array( $this, 'widget_init' ) );
 
 			/** Lets load translations */
-			add_action( 'plugins_loaded', array( 'load_text_domain' ) );
+			add_action( 'plugins_loaded', array( $this, 'load_text_domain' ) );
 		}
 
 		/**
@@ -120,6 +120,7 @@ if ( !class_exists( 'Shortcode_Widget_Plugin' ) ) {
 
 	}
 
+	/** Initialises an object of this class */
 	Shortcode_Widget_Plugin::get_instance();
 }
 
