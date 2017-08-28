@@ -1,0 +1,23 @@
+{
+    "name": "shortcode-widget",
+    "version": "1.5.0",
+    "main": "shortcode-widget.php",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gagan0123/shortcode-widget"
+    },
+    "keywords": [
+        "wordpress"
+    ],
+    "bugs": {
+        "url": "https://wordpress.org/support/plugin/shortcode-widget"
+    },
+    "author": "Gagan Deep Singh",
+    "license": "GPL-2.0",
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-wp-i18n": "^1.0.0",
+        "grunt-wp-readme-to-markdown": "^2.0.1"
+    },
+    "dependencies": {}
+}
