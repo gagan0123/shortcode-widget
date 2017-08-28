@@ -27,6 +27,6 @@ add_action( 'plugins_loaded', 'shortcode_widget_load_text_domain' );
 
 add_shortcode( 'shortcode_widget_test', 'shortcode_widget_test_output' );
 
-function shortcode_widget_test_output( $args ) {
+function shortcode_widget_test_output() {
 	return __( "It works", 'shortcode-widget' );
 }
