@@ -4,7 +4,7 @@
 **Contributors:** [gagan0123](https://profiles.wordpress.org/gagan0123)  
 **Tags:** Shortcode, Widget  
 **Requires at least:** 3.3  
-**Tested up to:** 4.8  
+**Tested up to:** 4.8.1  
 **Stable tag:** 1.4  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  

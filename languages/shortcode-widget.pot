@@ -1,10 +1,10 @@
 # Copyright (C) 2017 Gagan Deep Singh
-# This file is distributed under the GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.
+# This file is distributed under the GPLv2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Shortcode Widget 1.4\n"
+"Project-Id-Version: Shortcode Widget 1.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/shortcode-widget\n"
-"POT-Creation-Date: 2017-08-28 02:32:02+00:00\n"
+"POT-Creation-Date: 2017-08-28 02:42:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +39,7 @@ msgid "Automatically add paragraphs"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://wordpress.org/extend/plugins/shortcode-widget/"
+msgid "https://wordpress.org/plugins/shortcode-widget/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -53,5 +53,5 @@ msgid "Gagan Deep Singh"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://gagan.pro/"
+msgid "https://gagan0123.com"
 msgstr ""

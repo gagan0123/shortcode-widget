@@ -2,15 +2,16 @@
 
 /*
   Plugin Name: Shortcode Widget
-  Plugin URI: http://wordpress.org/extend/plugins/shortcode-widget/
+  Plugin URI:  https://wordpress.org/plugins/shortcode-widget/
   Description: Adds a text-like widget that allows you to write shortcode in it. (Just whats missing in the default text widget)
-  Author: Gagan Deep Singh
-  Author URI: http://gagan.pro/
-  Version: 1.4
+  Version:     1.5
+  Author:      Gagan Deep Singh
+  Author URI:  https://gagan0123.com
+  License:     GPLv2
+  License URI: https://www.gnu.org/licenses/gpl-2.0.html
   Text Domain: shortcode-widget
-  License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+  Domain Path: /languages
  */
-
 
 /** If this file is called directly, abort. */
 if ( !defined( 'ABSPATH' ) ) {
