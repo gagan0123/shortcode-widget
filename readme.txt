@@ -28,6 +28,11 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 
 == Changelog ==
 
+= 1.5 =
+* Added icon and screenshots
+* Escaping some values that could have been overridden by the translations
+* Added pot file for translations
+
 = 1.4 =
 * Updated compatibility with WordPress 4.8
 * Reversed the order of changelog
