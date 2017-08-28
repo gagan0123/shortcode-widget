@@ -11,22 +11,21 @@
   License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-require_once('includes/class-shortcode-widget.php');
 
-function shortcode_widget_init() {
-	register_widget( 'Shortcode_Widget' );
+/** If this file is called directly, abort. */
+if ( !defined( 'ABSPATH' ) ) {
+	die;
 }
 
-add_action( 'widgets_init', 'shortcode_widget_init' );
-
-function shortcode_widget_load_text_domain() {
-	load_plugin_textdomain( 'shortcode-widget', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+if ( !defined( 'SHORTCODE_WIDGET_PATH' ) ) {
+	/**
+	 * Absolute path of this plugin
+	 * 
+	 * @since 1.5
+	 */
+	define( 'SHORTCODE_WIDGET_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 }
 
-add_action( 'plugins_loaded', 'shortcode_widget_load_text_domain' );
+/** Loading the core plugin class */
+require_once SHORTCODE_WIDGET_PATH . 'includes/class-shortcode-widget-plugin.php';
 
-add_shortcode( 'shortcode_widget_test', 'shortcode_widget_test_output' );
-
-function shortcode_widget_test_output() {
-	return __( "It works", 'shortcode-widget' );
-}
