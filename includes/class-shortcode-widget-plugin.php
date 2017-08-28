@@ -120,5 +120,6 @@ if ( !class_exists( 'Shortcode_Widget_Plugin' ) ) {
 
 	}
 
+	Shortcode_Widget_Plugin::get_instance();
 }
 
