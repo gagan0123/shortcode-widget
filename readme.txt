@@ -21,6 +21,11 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 1. You are now ready to use the Shortcode Widget from the Widgets section.
 1. To test the widget you can add the widget and use the shortcode "[shortcode_widget_test]", it will display "It works" on the frontend and this will confirm the widget does work.
 
+== Screenshots ==
+1. Shortcode Widget that can be found in Widgets section
+2. Adding the widget to the sidebar
+3. Widget with the output of the shortcode
+
 == Changelog ==
 
 = 1.4 =
