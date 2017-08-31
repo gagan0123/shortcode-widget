@@ -37,7 +37,7 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 ## Changelog ##
 
 ### 1.5.1 ###
-* Unescaped title back in the code as some escaping it was creating issues with other plugins.
+* Unescaped title back in the code as escaping it was creating issues with other plugins.
 
 ### 1.5 ###
 * Added icon and screenshots.
