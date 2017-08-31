@@ -48,7 +48,7 @@ if ( !class_exists( 'Shortcode_Widget' ) ) {
 			$text = do_shortcode( apply_filters( 'widget_text', empty( $instance[ 'text' ] ) ? '' : $instance[ 'text' ], $instance, $this ) );
 			echo $args[ 'before_widget' ];
 			if ( !empty( $title ) ) {
-				echo $args[ 'before_title' ] . esc_html( $title ) . $args[ 'after_title' ];
+				echo $args[ 'before_title' ] . $title . $args[ 'after_title' ];
 			}
 			?>
 			<div class="textwidget"><?php echo!empty( $instance[ 'filter' ] ) ? wpautop( $text ) : $text; ?></div>
