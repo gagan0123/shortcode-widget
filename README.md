@@ -36,26 +36,29 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 
 ## Changelog ##
 
+### 1.5.1 ###
+* Unescaped title back in the code as some escaping it was creating issues with other plugins.
+
 ### 1.5 ###
-* Added icon and screenshots
-* Escaping some values that could have been overridden by the translations
-* Added pot file for translations
+* Added icon and screenshots.
+* Escaping some values that could have been overridden by the translations.
+* Added pot file for translations.
 * Change in calling of widget_text filter with new parameter that was added in WordPress 4.4.1
 
 ### 1.4 ###
 * Updated compatibility with WordPress 4.8
-* Reversed the order of changelog
+* Reversed the order of changelog.
 
 ### 1.3 ###
-* Minor bug fix
-* Changed tested up to version number
+* Minor bug fix.
+* Changed tested up to version number.
 * Made it translation ready, constant was being used for text domains, silly error, I know :)
 
 ### 1.2 ###
-* Corrections in text domain and added one more string as translatable
+* Corrections in text domain and added one more string as translatable.
 
 ### 1.1 ###
-* Reflecting the changes that have been done to the default text widget over the years
+* Reflecting the changes that have been done to the default text widget over the years.
 
 ### 1.0 ###
 * Tested with WP 4.0
@@ -64,7 +67,7 @@ To test the widget you can add the widget and use the shortcode "[shortcode_widg
 * Added a shortcode for testing the plugin '[shortcode_widget_test]'
 
 ### 0.2 ###
-* Added translation support
+* Added translation support.
 
 ### 0.1 ###
-* Added the shortcode widget
+* Added the shortcode widget.
