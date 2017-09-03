@@ -8,19 +8,19 @@
 	<!-- Exclude the Node Modules directory. -->
 	<exclude-pattern>/node_modules/*</exclude-pattern>
 
-    <!-- Exclude the bin directory. -->
+	<!-- Exclude the bin directory. -->
 	<exclude-pattern>/bin/*</exclude-pattern>
 
-    <!-- Exclude Gruntfile.js. -->
+	<!-- Exclude Gruntfile.js. -->
 	<exclude-pattern>Gruntfile.js</exclude-pattern>
 
 	<!-- Include the WordPress standards. -->
 	<rule ref="WordPress" />
 
-    <!-- We don't need to escape the output as some plugins are overriding 
-         these values. -->
-    <rule ref="WordPress.XSS.EscapeOutput">
-        <exclude-pattern>class-shortcode-widget.php</exclude-pattern>
-    </rule>
+	<!-- We don't need to escape the output as some plugins are overriding 
+	these values. -->
+	<rule ref="WordPress.XSS.EscapeOutput">
+		<exclude-pattern>class-shortcode-widget.php</exclude-pattern>
+	</rule>
 
 </ruleset>
