@@ -4,6 +4,7 @@
  *
  * @package Shortcode_Widget
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die; // If this file is called directly, abort.
 }
@@ -85,7 +86,7 @@ if ( ! class_exists( 'Shortcode_Widget' ) ) {
 			if ( current_user_can( 'unfiltered_html' ) ) {
 				$instance['text'] = $new_instance['text'];
 			} else {
-				$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) ); // wp_filter_post_kses() expects slashed
+				$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); // wp_filter_post_kses() expects slashed.
 			}
 			$instance['filter'] = ! empty( $new_instance['filter'] );
 			return $instance;
