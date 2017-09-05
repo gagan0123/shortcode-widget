@@ -2,6 +2,7 @@
 
 # Shortcode Widget #
 **Contributors:** [gagan0123](https://profiles.wordpress.org/gagan0123)  
+**Donate Link:** PayPal.me/gagan0123  
 **Tags:** Shortcode, Widget  
 **Requires at least:** 3.3  
 **Tested up to:** 4.8.1  
