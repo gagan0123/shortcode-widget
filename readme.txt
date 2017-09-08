@@ -1,6 +1,6 @@
 === Shortcode Widget ===
 Contributors: gagan0123
-Donate Link: PayPal.me/gagan0123
+Donate Link: https://PayPal.me/gagan0123
 Tags: Shortcode, Widget
 Requires at least: 3.3
 Tested up to: 4.8.1
