@@ -38,7 +38,7 @@ if ( ! class_exists( 'Shortcode_Widget_Plugin' ) ) {
 		 */
 		public function __construct() {
 			/** The main widget class */
-			require_once( SHORTCODE_WIDGET_PATH . 'includes/class-shortcode-widget.php' );
+			require_once SHORTCODE_WIDGET_PATH . 'includes/class-shortcode-widget.php';
 			$this->register_hooks();
 		}
 

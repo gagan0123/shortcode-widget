@@ -27,8 +27,8 @@ if ( ! class_exists( 'Shortcode_Widget' ) ) {
 		 */
 		public function __construct() {
 			$widget_ops  = array(
-				'classname'      => 'shortcode_widget',
-				'description'    => __( 'Shortcode or HTML or Plain Text.', 'shortcode-widget' ),
+				'classname'   => 'shortcode_widget',
+				'description' => __( 'Shortcode or HTML or Plain Text.', 'shortcode-widget' ),
 			);
 			$control_ops = array(
 				'width'  => 400,
@@ -81,8 +81,8 @@ if ( ! class_exists( 'Shortcode_Widget' ) ) {
 		 * @return array|false        Settings to save or bool false to cancel saving.
 		 */
 		public function update( $new_instance, $old_instance ) {
-			$instance            = $old_instance;
-			$instance['title']     = strip_tags( $new_instance['title'] );
+			$instance          = $old_instance;
+			$instance['title'] = strip_tags( $new_instance['title'] );
 			if ( current_user_can( 'unfiltered_html' ) ) {
 				$instance['text'] = $new_instance['text'];
 			} else {
@@ -106,8 +106,8 @@ if ( ! class_exists( 'Shortcode_Widget' ) ) {
 		public function form( $instance ) {
 			$instance = wp_parse_args(
 				(array) $instance, array(
-					'title'  => '',
-					'text'   => '',
+					'title' => '',
+					'text'  => '',
 				)
 			);
 			?>
