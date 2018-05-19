@@ -104,7 +104,7 @@ if ( ! class_exists( 'Shortcode_Widget_Plugin' ) ) {
 		 *
 		 * @return void
 		 */
-		function load_text_domain() {
+		public function load_text_domain() {
 			load_plugin_textdomain( 'shortcode-widget', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		}
 
@@ -118,7 +118,7 @@ if ( ! class_exists( 'Shortcode_Widget_Plugin' ) ) {
 		 * @return string Returns a string "It works", or a translated string if
 		 *                available for the language of the WordPress site.
 		 */
-		function test_widget() {
+		public function test_widget() {
 			return __( 'It works', 'shortcode-widget' );
 		}
 
