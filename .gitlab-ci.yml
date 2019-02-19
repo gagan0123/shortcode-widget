@@ -1,38 +1,36 @@
 variables:
-  # Configure mysql service (https://hub.docker.com/_/mysql/)
-  MYSQL_DATABASE: wordpress_tests
-  MYSQL_ROOT_PASSWORD: mysql
+    # Configure mysql service (https://hub.docker.com/_/mysql/)
+    MYSQL_DATABASE: wordpress_tests
+    MYSQL_ROOT_PASSWORD: mysql
 
 before_script:
-
-  # Set up WordPress tests
-  - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
+    - alias wpt='bash bin/install-wp-tests.sh'
 
 PHPCS:PHP7.2:MySQL:
-  image: gagan0123/php:7.2
-  services:
-    - mysql:5.6
-  script:
-    - phpcs
-  allow_failure: true
+    image: gagan0123/php:7.2
+    script:
+        - phpcs
+    allow_failure: true
 
 PHPunit:PHP7.2:MySQL:
-  image: gagan0123/php:7.2
-  services:
-    - mysql:5.6
-  script:
-    - phpunit
+    image: gagan0123/php:7.2
+    services:
+        - mysql:5.6
+    script:
+        # Set up WordPress tests
+        - wpt wordpress_tests root mysql mysql latest true
+        - phpunit
 
-PHPunit:PHP7.0:MySQL:
-  image: gagan0123/php:7.0
-  services:
-    - mysql:5.6
-  script:
-    - phpunit
-
-PHPunit:PHP5.6:MySQL:
-  image: gagan0123/php:5.6
-  services:
-    - mysql:5.6
-  script:
-    - phpunit
+#PHPunit:PHP7.0:MySQL:
+#    image: gagan0123/php:7.0
+#    services:
+#        - mysql:5.6
+#    script:
+#        - phpunit
+#
+#PHPunit:PHP5.6:MySQL:
+#    image: gagan0123/php:5.6
+#    services:
+#        - mysql:5.6
+#    script:
+#        - phpunit
