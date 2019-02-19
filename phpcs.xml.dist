@@ -26,10 +26,13 @@
 
 	<!-- Include the WordPress standards. -->
 	<rule ref="WordPress" />
+    
+    <!-- Minimum WordPress supported check. -->
+    <config name="minimum_supported_wp_version" value="3.3"/>
 
 	<!-- We don't need to escape the output as some plugins are overriding 
 	these values. -->
-	<rule ref="WordPress.XSS.EscapeOutput">
+	<rule ref="WordPress.Security.EscapeOutput">
 		<exclude-pattern>class-shortcode-widget.php</exclude-pattern>
 	</rule>
 
