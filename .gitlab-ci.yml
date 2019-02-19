@@ -7,6 +7,9 @@ before_script:
 
   # Set up WordPress tests
   - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
+  - phpcs --version
+  - phpcs -i
+  - phpcs -e
 
 PHPunit:PHP7.0:MySQL:
   image: gagan0123/php:7.0
