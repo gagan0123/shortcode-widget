@@ -116,3 +116,39 @@ WP4.0.25:PHP5.6:
         # Set up WordPress tests
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql 4.0.25 true
         - phpunit
+
+WP3.9.26:PHP5.6:
+    image: gagan0123/php:5.6
+    services:
+        - mysql:5.6
+    script:
+        # Set up WordPress tests
+        - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql 3.9.26 true
+        - phpunit
+
+WP3.8.28:PHP5.6:
+    image: gagan0123/php:5.6
+    services:
+        - mysql:5.6
+    script:
+        # Set up WordPress tests
+        - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql 3.8.28 true
+        - phpunit
+
+WP3.7.28:PHP5.6:
+    image: gagan0123/php:5.6
+    services:
+        - mysql:5.6
+    script:
+        # Set up WordPress tests
+        - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql 3.7.28 true
+        - phpunit
+
+WP3.6.1:PHP5.6:
+    image: gagan0123/php:5.6
+    services:
+        - mysql:5.6
+    script:
+        # Set up WordPress tests
+        - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql 3.6.1 true
+        - phpunit
