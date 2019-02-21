@@ -82,7 +82,7 @@ if ( ! class_exists( 'Shortcode_Widget' ) ) {
 		 */
 		public function update( $new_instance, $old_instance ) {
 			$instance          = $old_instance;
-			$instance['title'] = strip_tags( $new_instance['title'] );
+			$instance['title'] = wp_strip_all_tags( $new_instance['title'] );
 			if ( current_user_can( 'unfiltered_html' ) ) {
 				$instance['text'] = $new_instance['text'];
 			} else {
