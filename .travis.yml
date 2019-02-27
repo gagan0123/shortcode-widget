@@ -1,0 +1,47 @@
+dist: xenial
+
+cache:
+  directories:
+    - $HOME/.cache/composer/files
+
+language:
+  - php
+  
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+before_install:
+  # Speed up build time by disabling Xdebug.
+  - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+
+before_script:
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - if [[ ! -z "$WP_VERSION" ]] ; then
+        bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
+        composer global require "phpunit/phpunit=5.7.*"
+    fi
+
+script:
+  - if [[ ! -z "$WP_VERSION" ]] ; then
+        phpunit
+        WP_MULTISITE=1 phpunit
+    fi
+
+stages:
+  - verify
+  - test
+  
+jobs:
+    fast_finish: true
+    include:
+        - stage: verify
+          php: 7.2
+          before_install: phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+          install:
+              - composer global require dealerdirect/phpcodesniffer-composer-installer wp-coding-standards/wpcs --update-no-dev
+              - ln -s "$HOME/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs" "/usr/local/bin/phpcs"
+              - ln -s "$HOME/.composer/vendor/squizlabs/php_codesniffer/bin/phpcbf" "/usr/local/bin/phpcbf"
+          script:
+              - phpcs
