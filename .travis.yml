@@ -40,8 +40,6 @@ jobs:
           php: 7.2
           before_install: phpenv config-rm xdebug.ini || echo 'No xdebug config.'
           install:
-              - composer global require dealerdirect/phpcodesniffer-composer-installer wp-coding-standards/wpcs --update-no-dev
-              - ln -s "$HOME/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs" "/usr/local/bin/phpcs"
-              - ln -s "$HOME/.composer/vendor/squizlabs/php_codesniffer/bin/phpcbf" "/usr/local/bin/phpcbf"
+              - composer require dealerdirect/phpcodesniffer-composer-installer wp-coding-standards/wpcs --update-no-dev
           script:
-              - phpcs
+              - .composer/vendor/bin/phpcs
