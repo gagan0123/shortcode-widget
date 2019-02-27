@@ -8,16 +8,15 @@ stages:
     - test
     - deploy
 
-PHPCS:PHP7.2:MySQL:
+PHPCS:
     stage: verify
-    image: gagan0123/php:7.2
+    image: wpunit/php:wpcs
     script:
         - phpcs
-    allow_failure: true
 
 WP-Latest:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
@@ -27,7 +26,7 @@ WP-Latest:PHP5.6:
 
 WP-Latest:PHP7.2:
     stage: test
-    image: gagan0123/php:7.2
+    image: wpunit/php:7.2
     services:
         - mysql:5.6
     script:
@@ -37,7 +36,7 @@ WP-Latest:PHP7.2:
 
 WP-Latest:PHP7.3:
     stage: test
-    image: gagan0123/php:7.3
+    image: wpunit/php:7.3
     services:
         - mysql:5.6
     script:
@@ -48,7 +47,7 @@ WP-Latest:PHP7.3:
 
 WP-Nightly:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
@@ -59,7 +58,7 @@ WP-Nightly:PHP5.6:
 
 WP-Nightly:PHP7.2:
     stage: test
-    image: gagan0123/php:7.2
+    image: wpunit/php:7.2
     services:
         - mysql:5.6
     script:
@@ -70,7 +69,7 @@ WP-Nightly:PHP7.2:
 
 WP-Nightly:PHP7.3:
     stage: test
-    image: gagan0123/php:7.3
+    image: wpunit/php:7.3
     services:
         - mysql:5.6
     script:
@@ -81,7 +80,7 @@ WP-Nightly:PHP7.3:
 
 WP4.9.9:PHP7.2:
     stage: test
-    image: gagan0123/php:7.2
+    image: wpunit/php:7.2
     services:
         - mysql:5.6
     script:
@@ -91,7 +90,7 @@ WP4.9.9:PHP7.2:
 
 WP4.8.8:PHP7.2:
     stage: test
-    image: gagan0123/php:7.2
+    image: wpunit/php:7.2
     services:
         - mysql:5.6
     script:
@@ -101,7 +100,7 @@ WP4.8.8:PHP7.2:
 
 WP4.7.12:PHP7.2:
     stage: test
-    image: gagan0123/php:7.2
+    image: wpunit/php:7.2
     services:
         - mysql:5.6
     script:
@@ -111,7 +110,7 @@ WP4.7.12:PHP7.2:
 
 WP4.6.13:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
@@ -121,7 +120,7 @@ WP4.6.13:PHP5.6:
 
 WP4.5.16:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
@@ -131,7 +130,7 @@ WP4.5.16:PHP5.6:
 
 WP4.4.17:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
@@ -141,7 +140,7 @@ WP4.4.17:PHP5.6:
 
 WP4.3.18:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
@@ -151,7 +150,7 @@ WP4.3.18:PHP5.6:
 
 WP4.2.22:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
@@ -161,7 +160,7 @@ WP4.2.22:PHP5.6:
 
 WP4.1.25:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
@@ -171,7 +170,7 @@ WP4.1.25:PHP5.6:
 
 WP4.0.25:PHP5.6:
     stage: test
-    image: gagan0123/php:5.6
+    image: wpunit/php:5.6
     services:
         - mysql:5.6
     script:
