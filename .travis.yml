@@ -32,7 +32,11 @@ script:
 stages:
   - verify
   - test
-  
+
+env:
+    global:
+        - PATH=$PATH:/home/travis/.config/composer/vendor/bin
+
 jobs:
     fast_finish: true
     include:
