@@ -43,7 +43,6 @@ WP-Latest:PHP7.3:
         # Set up WordPress tests
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
         - phpunit --configuration phpunit.xml.dist
-    allow_failure: true
 
 WP-Nightly:PHP5.6:
     stage: test
