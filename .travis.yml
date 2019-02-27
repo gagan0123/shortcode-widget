@@ -43,5 +43,5 @@ jobs:
           install:
               - composer global require dealerdirect/phpcodesniffer-composer-installer wp-coding-standards/wpcs --update-no-dev
           script:
-              - $HOME/.composer/vendor/bin/phpcs -i
-              - $HOME/.composer/vendor/bin/phpcs
+              - phpcs -i
+              - phpcs
