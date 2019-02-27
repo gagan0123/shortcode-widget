@@ -199,7 +199,7 @@ Deploy:
     stage: deploy
     environment: 
         name: deployment
-    image: gagan0123/svn:latest
+    image: wpunit/php:svn-release
     when: manual
     script:
         - bash bin/gitlab-deploy.sh
