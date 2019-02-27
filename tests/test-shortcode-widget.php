@@ -192,9 +192,11 @@ class Test_Shortcode_Widget extends WP_UnitTestCase {
 			'text'  => "The\n\n<b>Code</b>",
 		);
 		wp_set_current_user(
-			$this->factory()->user->create(
+			wp_insert_user(
 				array(
-					'role' => 'administrator',
+					'role'       => 'administrator',
+					'user_pass'  => 'test',
+					'user_login' => 'test',
 				)
 			)
 		);
