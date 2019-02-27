@@ -39,6 +39,7 @@ jobs:
         - stage: verify
           php: 7.2
           before_install: phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+          before_script: false
           install:
               - composer require dealerdirect/phpcodesniffer-composer-installer wp-coding-standards/wpcs --update-no-dev
           script:
