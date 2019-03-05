@@ -17,13 +17,13 @@ PHPCS:
 WP-Latest:PHP7.3:
     stage: test
     image: wpunit/php:7.3
-    coverage: '^\s*Lines:\s*\d+.\d+\%'
     services:
         - mysql:5.6
     script:
         # Set up WordPress tests
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
         - phpunit --configuration phpunit.xml.dist
+    coverage: /^\s*Lines:\s*\d+.\d+\%/
 
 WP-Latest:PHP7.2:
     stage: test
