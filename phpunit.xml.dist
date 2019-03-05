@@ -6,10 +6,19 @@
 	convertErrorsToExceptions="true"
 	convertNoticesToExceptions="true"
 	convertWarningsToExceptions="true"
+    stopOnFailure="false"
 	>
 	<testsuites>
 		<testsuite name="Test Shortcode Widget">
 			<directory prefix="test-" suffix=".php">./tests/</directory>
 		</testsuite>
 	</testsuites>
+    <logging>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+    </logging>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./includes</directory>
+        </whitelist>
+    </filter>
 </phpunit>
