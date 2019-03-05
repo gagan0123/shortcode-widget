@@ -17,7 +17,7 @@ PHPCS:
 WP-Latest:PHP7.3:
     stage: test
     image: wpunit/php:7.3
-    coverage: ^\s*Lines:\s*\d+.\d+\%
+    coverage: '^\s*Lines:\s*\d+.\d+\%'
     services:
         - mysql:5.6
     script:
