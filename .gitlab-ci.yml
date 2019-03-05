@@ -22,7 +22,7 @@ WP-Latest:PHP7.3:
     script:
         # Set up WordPress tests
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
-        - phpunit --configuration phpunit.xml.dist
+        - phpunit --coverage-text --configuration phpunit.xml.dist
     coverage: /^\s*Lines:\s*\d+.\d+\%/
 
 WP-Latest:PHP7.2:
