@@ -6,7 +6,7 @@ variables:
 stages:
     - verify
     - test
-    - deploy
+    - release
 
 PHPCS:
     stage: verify
@@ -196,11 +196,13 @@ WP4.0.25:PHP5.6:
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql 4.0.25 true
         - phpunit --configuration phpunit.xml.dist
 
-Deploy:
-    stage: deploy
+Release:
+    stage: release
     environment: 
-        name: deployment
+        name: Release
     image: wpunit/php:svn-release
     when: manual
     script:
         - bash bin/gitlab-deploy.sh
+    only:
+        - tags
