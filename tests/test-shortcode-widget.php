@@ -230,7 +230,7 @@ class Test_Shortcode_Widget extends WP_UnitTestCase {
 	 *
 	 * @covers Shortcode_Widget::form
 	 */
-	public function test_form(){
+	public function test_form() {
 		$widget = new Shortcode_Widget();
 		$text   = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Praesent ut turpis consequat lorem volutpat bibendum vitae vitae ante.";
 
@@ -242,14 +242,14 @@ class Test_Shortcode_Widget extends WP_UnitTestCase {
 			'text'   => $text,
 			'filter' => false,
 		);
-		
+
 		ob_start();
 		$widget->form( $instance );
 		$form_output = ob_get_clean();
 
-		$expected_title_field = '<p><label for="widget-shortcode-widget--title">Title:</label>
+		$expected_title_field    = '<p><label for="widget-shortcode-widget--title">Title:</label>
 				<input class="widefat" id="widget-shortcode-widget--title" name="widget-shortcode-widget[][title]" type="text" value="Foo" /></p>';
-		$expected_content_field = '<p><label for="widget-shortcode-widget--text">Content:</label>
+		$expected_content_field  = '<p><label for="widget-shortcode-widget--text">Content:</label>
 				<textarea class="widefat" rows="16" cols="20" id="widget-shortcode-widget--text" name="widget-shortcode-widget[][text]">' . $text . '</textarea></p>';
 		$expected_checkbox_field = '<p><input id="widget-shortcode-widget--filter" name="widget-shortcode-widget[][filter]" type="checkbox"  />&nbsp;<label for="widget-shortcode-widget--filter">Automatically add paragraphs</label></p>';
 		$this->assertContains( $expected_title_field, $form_output );
