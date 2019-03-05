@@ -7,7 +7,13 @@ module.exports = function ( grunt ) {
 				options: {
 					screenshot_url: '<%= pkg.repository.url %>/raw/master/assets/{screenshot}.png',
 					post_convert: function ( file ) {
-						return "<img src='" + grunt.config.get( 'pkg' ).repository.url + "/raw/master/assets/icon-128x128.png' align='right' />\n\n" + file;
+						var project_icon = "<img src='" + grunt.config.get( 'pkg' ).repository.url + "/raw/master/assets/icon-128x128.png' align='right' />";
+						var travis_badge = "[![build status](https://travis-ci.com/gagan0123/shortcode-widget.svg?branch=master)](https://travis-ci.com/gagan0123/shortcode-widget)"
+						var pipeline_badge = "[![pipeline status](https://gitlab.com/gagan0123/shortcode-widget/badges/master/pipeline.svg)](https://gitlab.com/gagan0123/shortcode-widget/commits/master)";
+						var coverage_badge = "[![coverage report](https://gitlab.com/gagan0123/shortcode-widget/badges/master/coverage.svg)](https://gitlab.com/gagan0123/shortcode-widget/commits/master)";
+						var badges = pipeline_badge + ' ' + coverage_badge + "\n" + project_icon;
+						file = file.replace(/^#\s[\w\s]*#/m,"$&\n"+badges );
+						return file;
 					}
 				},
 				files: {
