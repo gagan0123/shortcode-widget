@@ -1,6 +1,6 @@
-<img src='https://github.com/gagan0123/shortcode-widget/raw/master/assets/icon-128x128.png' align='right' />
-
 # Shortcode Widget #
+[![pipeline status](https://gitlab.com/gagan0123/shortcode-widget/badges/master/pipeline.svg)](https://gitlab.com/gagan0123/shortcode-widget/commits/master) [![coverage report](https://gitlab.com/gagan0123/shortcode-widget/badges/master/coverage.svg)](https://gitlab.com/gagan0123/shortcode-widget/commits/master)
+<img src='https://github.com/gagan0123/shortcode-widget/raw/master/assets/icon-128x128.png' align='right' />
 **Contributors:** [gagan0123](https://profiles.wordpress.org/gagan0123)  
 **Donate Link:** https://PayPal.me/gagan0123  
 **Tags:** Shortcode, Widget  
