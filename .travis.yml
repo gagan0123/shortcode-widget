@@ -71,6 +71,9 @@ jobs:
           env: WP_VERSION=latest
         - stage: test
           php: 7.2
+          env: WP_VERSION=5.1
+        - stage: test
+          php: 7.2
           env: WP_VERSION=5.0.3
         - stage: test
           php: 7.2
