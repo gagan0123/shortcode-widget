@@ -25,9 +25,9 @@ Coverage:
         - phpunit --coverage-text --colors=never --configuration phpunit.xml.dist
     coverage: /^\s*Lines:\s*\d+.\d+\%/
 
-WP-Latest:PHP7.3:
+WP-Latest:PHP7.4:
     stage: test
-    image: wpunit/php:7.3
+    image: wpunit/php:7.4
     services:
         - mysql:5.6
     script:
@@ -35,9 +35,9 @@ WP-Latest:PHP7.3:
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
         - phpunit --configuration phpunit.xml.dist
 
-WP-Latest:PHP7.2:
+WP-Latest:PHP7.3:
     stage: test
-    image: wpunit/php:7.2
+    image: wpunit/php:7.3
     services:
         - mysql:5.6
     script:
@@ -55,9 +55,9 @@ WP-Latest:PHP5.6:
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
         - phpunit --configuration phpunit.xml.dist
 
-WP-Nightly:PHP7.3:
+WP-Nightly:PHP7.4:
     stage: test
-    image: wpunit/php:7.3
+    image: wpunit/php:7.4
     services:
         - mysql:5.6
     script:
@@ -66,9 +66,9 @@ WP-Nightly:PHP7.3:
         - phpunit --configuration phpunit.xml.dist
     allow_failure: true
 
-WP-Nightly:PHP7.2:
+WP-Nightly:PHP7.3:
     stage: test
-    image: wpunit/php:7.2
+    image: wpunit/php:7.3
     services:
         - mysql:5.6
     script:
@@ -88,9 +88,9 @@ WP-Nightly:PHP5.6:
         - phpunit --configuration phpunit.xml.dist
     allow_failure: true
 
-WP5.3:PHP7.2:
+WP5.3:PHP7.4:
     stage: test
-    image: wpunit/php:7.2
+    image: wpunit/php:7.4
     variables: 
         PHPUNIT_VERSION: 5
     services:
@@ -100,9 +100,9 @@ WP5.3:PHP7.2:
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql 5.3 true
         - phpunit --configuration phpunit.xml.dist
 
-WP5.2:PHP7.2:
+WP5.2:PHP7.4:
     stage: test
-    image: wpunit/php:7.2
+    image: wpunit/php:7.4
     variables: 
         PHPUNIT_VERSION: 5
     services:
