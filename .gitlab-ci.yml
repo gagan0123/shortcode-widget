@@ -88,6 +88,16 @@ WP-Nightly:PHP5.6:
         - phpunit --configuration phpunit.xml.dist
     allow_failure: true
 
+WP5.4:PHP7.4:
+    stage: test
+    image: wpunit/php:7.4
+    services:
+        - mysql:5.6
+    script:
+        # Set up WordPress tests
+        - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql 5.4 true
+        - phpunit --configuration phpunit.xml.dist
+
 WP5.3:PHP7.4:
     stage: test
     image: wpunit/php:7.4
