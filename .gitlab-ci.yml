@@ -25,6 +25,16 @@ Coverage:
         - phpunit --coverage-text --colors=never --configuration phpunit.xml.dist
     coverage: /^\s*Lines:\s*\d+.\d+\%/
 
+WP-Latest:PHP8.0:
+    stage: test
+    image: wpunit/php:8.0
+    services:
+        - mysql:5.6
+    script:
+        # Set up WordPress tests
+        - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
+        - phpunit --configuration phpunit.xml.dist
+
 WP-Latest:PHP7.4:
     stage: test
     image: wpunit/php:7.4
@@ -54,6 +64,17 @@ WP-Latest:PHP5.6:
         # Set up WordPress tests
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
         - phpunit --configuration phpunit.xml.dist
+
+WP-Nightly:PHP8.0:
+    stage: test
+    image: wpunit/php:8.0
+    services:
+        - mysql:5.6
+    script:
+        # Set up WordPress tests
+        - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql nightly true
+        - phpunit --configuration phpunit.xml.dist
+    allow_failure: true
 
 WP-Nightly:PHP7.4:
     stage: test
