@@ -22,7 +22,7 @@ Coverage:
     script:
         # Set up WordPress tests
         - bash bin/install-wp-tests.sh wordpress_tests root mysql mysql latest true
-        - phpunit --coverage-text --colors=never --configuration phpunit.xml.dist
+        - XDEBUG_MODE=coverage phpunit --coverage-text --colors=never --configuration phpunit.xml.dist
     coverage: /^\s*Lines:\s*\d+.\d+\%/
 
 WP-Latest:PHP8.0:
