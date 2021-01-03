@@ -1,6 +1,6 @@
 {
     "name": "shortcode-widget",
-    "version": "1.5.0",
+    "version": "1.5.3",
     "main": "shortcode-widget.php",
     "repository": {
         "type": "git",

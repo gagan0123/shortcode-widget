@@ -3,7 +3,7 @@
  * Plugin Name: Shortcode Widget
  * Plugin URI:  https://wordpress.org/plugins/shortcode-widget/
  * Description: Adds a text-like widget that allows you to write shortcode in it. (Just whats missing in the default text widget)
- * Version:     1.5.2
+ * Version:     1.5.3
  * Author:      Gagan Deep Singh
  * Author URI:  https://gagan0123.com
  * License:     GPLv2
