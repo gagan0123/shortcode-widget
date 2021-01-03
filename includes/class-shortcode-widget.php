@@ -60,14 +60,25 @@ if ( ! class_exists( 'Shortcode_Widget' ) ) {
 			$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
 			/** This filter is documented in wp-includes/widgets/class-wp-widget-text.php */
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			$text = do_shortcode( apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance, $this ) );
+
+			// We need $args['before_widget'] value as it is, so no escaping it.
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo $args['before_widget'];
 			if ( ! empty( $title ) ) {
+				// We need $args['before_title'] and $args['after_title'] values as they are, so no escaping it.
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo $args['before_title'] . $title . $args['after_title'];
 			}
 			?>
+			<?php
+			// We need $instance['filter'] value as it is, so no escaping it.
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<div class="textwidget"><?php echo ! empty( $instance['filter'] ) ? wpautop( $text ) : $text; ?></div>
 			<?php
+			// We need $args['after_widget'] value as it is, so no escaping it.
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo $args['after_widget'];
 		}
 
