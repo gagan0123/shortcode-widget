@@ -9,6 +9,11 @@ config:
     php: .lando/php.ini
     database: .lando/mysql.cnf
 services:
+  node:
+    type: node:18
+    overrides:
+      environment:
+        NODE_ENV: "development"
   appserver:
     overrides:
       environment:
@@ -50,6 +55,6 @@ tooling:
       - appserver: /app/.lando/xdebug.sh
     user: root
   node:
-    service: appserver
+    service: node
   npm:
-    service: appserver
+    service: node
