@@ -1,10 +1,18 @@
-# Shortcode Widget
+# Shortcode Widget #
+[![build status](https://travis-ci.com/gagan0123/shortcode-widget.svg?branch=master)](https://travis-ci.com/gagan0123/shortcode-widget) [![pipeline status](https://gitlab.com/gagan0123/shortcode-widget/badges/master/pipeline.svg)](https://gitlab.com/gagan0123/shortcode-widget/commits/master) [![coverage report](https://gitlab.com/gagan0123/shortcode-widget/badges/master/coverage.svg)](https://gitlab.com/gagan0123/shortcode-widget/commits/master)
+<img src='https://github.com/gagan0123/shortcode-widget/raw/master/assets/icon-128x128.png' align='right' />
 
-A WordPress plugin that provides a "Shortcode Widget", allowing users to execute shortcodes within a widget area. This plugin bridges the gap in the default text widget by enabling shortcode execution and offering optional paragraph formatting.
+**Contributors:** [gagan0123](https://profiles.wordpress.org/gagan0123)
+**Donate Link:** https://PayPal.me/gagan0123
+**Tags:** Shortcode, Widget
+**Requires at least:** 3.3
+**Requires PHP:** 5.6
+**Tested up to:** 5.6
+**Stable tag:** 1.5.3
+**License:** GPLv2 or later
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
-**Version**: 1.5.3
-**License**: GPLv2 or later
-**Tags**: Shortcode, Widget
+Adds a text-like widget that allows you to write shortcode in it.
 
 ## Project Overview
 
@@ -40,14 +48,13 @@ This repository contains the source code for the plugin, including unit tests an
 
 ## Installation & Setup
 
-### For Users (Production)
+### Standard Installation
+1. Add the plugin's folder in the WordPress' plugin directory.
+1. Activate the plugin.
+1. You are now ready to use the Shortcode Widget from the Widgets section.
+1. To test the widget you can add the widget and use the shortcode "[shortcode_widget_test]", it will display "It works" on the frontend and this will confirm the widget does work.
 
-1. Upload the `shortcode-widget` folder to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Go to **Appearance > Widgets**.
-4. Drag the **Shortcode Widget** to a sidebar.
-
-### For Developers (Local Setup)
+### Developer Setup (Lando)
 
 This project uses [Lando](https://lando.dev/) for a consistent local development environment.
 
@@ -76,12 +83,8 @@ This project uses [Lando](https://lando.dev/) for a consistent local development
 3.  Access the site:
     Lando will provide a URL (e.g., `https://shortcode-widget.lndo.site/`).
 
-**Environment Variables:**
-The code itself relies on standard WordPress constants (e.g., `ABSPATH`). The local environment uses standard Lando variables (see `.lando.yml`).
-
 ## Features & Usage
 
-### Key Features
 - **Shortcode Execution**: parses any shortcodes entered in the content area.
 - **Content Filtering**: Option to "Automatically add paragraphs" (applies `wpautop`).
 - **Unfiltered HTML**: Supports raw HTML if the user has `unfiltered_html` capability.
@@ -93,29 +96,59 @@ The code itself relies on standard WordPress constants (e.g., `ABSPATH`). The lo
 3.  **Content**: Enter text, HTML, or shortcodes (e.g., `[gallery]`, `[contact-form-7]`, or `[shortcode_widget_test]`).
 4.  **Automatically add paragraphs**: Check this box to convert double line breaks to HTML paragraphs.
 
-## Development Workflow
+## Screenshots
+### 1. Shortcode Widget that can be found in Widgets section
+![Shortcode Widget that can be found in Widgets section](https://github.com/gagan0123/shortcode-widget/raw/master/assets/screenshot-1.png)
 
-### Running Tests
-Unit tests are written using PHPUnit and the WordPress Test Suite.
+### 2. Adding the widget to the sidebar
+![Adding the widget to the sidebar](https://github.com/gagan0123/shortcode-widget/raw/master/assets/screenshot-2.png)
 
-To run tests inside Lando:
-```bash
-# Verify the test setup (usually handled by Lando recipe or needs manual bootstrap)
-# Assuming standard PHPUnit execution:
-lando phpunit
-```
+### 3. Widget with the output of the shortcode
+![Widget with the output of the shortcode](https://github.com/gagan0123/shortcode-widget/raw/master/assets/screenshot-3.png)
 
-### Build Tasks
-Grunt is used for maintenance tasks.
+## Changelog
 
-1.  Install dependencies:
-    ```bash
-    lando npm install
-    ```
+### 1.5.3
+* Strict PHPCS ruleset adherence.
+* More documentation in widget class.
+* Testing with WordPress 5.6
 
-2.  Run default tasks (Updates `README.md` from `readme.txt` and generates `.pot` file):
-    ```bash
-    lando grunt
-    ```
+### 1.5.2
+* Some PHPCS corrections, making code adhering to WordPress coding standards.
+* Replaced strip_tags function with wp_strip_all_tags.
 
-*Note: The `README.md` in the root is technically a build artifact generated from `readme.txt`. However, for GitHub viewers, this document serves as the primary source of truth for the codebase structure and development.*
+### 1.5.1
+* Unescaped title back in the code as escaping it was creating issues with other plugins.
+
+### 1.5
+* Added icon and screenshots.
+* Escaping some values that could have been overridden by the translations.
+* Added pot file for translations.
+* Change in calling of widget_text filter with new parameter that was added in WordPress 4.4.1
+
+### 1.4
+* Updated compatibility with WordPress 4.8
+* Reversed the order of changelog.
+
+### 1.3
+* Minor bug fix.
+* Changed tested up to version number.
+* Made it translation ready, constant was being used for text domains, silly error, I know :)
+
+### 1.2
+* Corrections in text domain and added one more string as translatable.
+
+### 1.1
+* Reflecting the changes that have been done to the default text widget over the years.
+
+### 1.0
+* Tested with WP 4.0
+
+### 0.3
+* Added a shortcode for testing the plugin '[shortcode_widget_test]'
+
+### 0.2
+* Added translation support.
+
+### 0.1
+* Added the shortcode widget.
