@@ -3,7 +3,7 @@
 <img src='https://github.com/gagan0123/shortcode-widget/raw/master/assets/icon-128x128.png' align='right' />
 
 
-**Contributors:** [gagan0123](https://profiles.wordpress.org/gagan0123)  
+**Contributors:** [gagan0123](https://profiles.wordpress.org/gagan0123/)  
 **Donate Link:** https://PayPal.me/gagan0123  
 **Tags:** Shortcode, Widget  
 **Requires at least:** 3.3  
