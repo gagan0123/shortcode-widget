@@ -1,5 +1,5 @@
 # Shortcode Widget #
-[![build status](https://travis-ci.com/gagan0123/shortcode-widget.svg?branch=master)](https://travis-ci.com/gagan0123/shortcode-widget) [![pipeline status](https://gitlab.com/gagan0123/shortcode-widget/badges/master/pipeline.svg)](https://gitlab.com/gagan0123/shortcode-widget/commits/master) [![coverage report](https://gitlab.com/gagan0123/shortcode-widget/badges/master/coverage.svg)](https://gitlab.com/gagan0123/shortcode-widget/commits/master)
+[![CI](https://github.com/gagan0123/shortcode-widget/actions/workflows/ci.yml/badge.svg)](https://github.com/gagan0123/shortcode-widget/actions/workflows/ci.yml)
 <img src='https://github.com/gagan0123/shortcode-widget/raw/master/assets/icon-128x128.png' align='right' />
 
 
