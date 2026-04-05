@@ -5,7 +5,7 @@
 /.gitattributes
 /.gitignore
 /.editorconfig
-/.phpcs.xml.dist
+/phpcs.xml
 /.travis.yml
 /.gitlab-ci.yml
 /.distignore

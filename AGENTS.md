@@ -54,7 +54,7 @@ wp i18n make-pot . languages/shortcode-widget.pot --slug=shortcode-widget  # Gen
 ## Coding Standards
 
 - WordPress Coding Standards (WPCS 3.0) enforced via PHPCS
-- Configuration in `.phpcs.xml.dist`
+- Configuration in `phpcs.xml`
 - Text domain: `shortcode-widget`
 - Class prefix: `Shortcode_Widget`
 - All PHP code must pass `lando phpcs .` before committing
