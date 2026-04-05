@@ -76,7 +76,6 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: mysqli
-          tools: phpunit:9
           coverage: none
 
       - name: Install Composer dependencies
@@ -88,10 +87,10 @@ jobs:
       - name: Run PHPUnit
         env:
           WP_TESTS_PHPUNIT_POLYFILLS_PATH: ${{ github.workspace }}/vendor/yoast/phpunit-polyfills
-        run: phpunit
+        run: vendor/bin/phpunit
 
       - name: Run PHPUnit (multisite)
         env:
           WP_MULTISITE: 1
           WP_TESTS_PHPUNIT_POLYFILLS_PATH: ${{ github.workspace }}/vendor/yoast/phpunit-polyfills
-        run: phpunit
+        run: vendor/bin/phpunit
