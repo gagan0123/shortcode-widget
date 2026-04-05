@@ -66,6 +66,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y subversion mysql-client
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
