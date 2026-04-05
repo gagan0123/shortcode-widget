@@ -146,7 +146,6 @@ if ( ! class_exists( 'Shortcode_Widget' ) ) {
 			<p><input id="<?php echo esc_attr( $this->get_field_id( 'filter' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'filter' ) ); ?>" type="checkbox" <?php checked( isset( $instance['filter'] ) ? $instance['filter'] : 0 ); ?> />&nbsp;<label for="<?php echo esc_attr( $this->get_field_id( 'filter' ) ); ?>"><?php esc_html_e( 'Automatically add paragraphs', 'shortcode-widget' ); ?></label></p>
 			<?php
 		}
-
 	}
 
 }

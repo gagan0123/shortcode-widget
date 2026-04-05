@@ -43,17 +43,18 @@ lando rebuild -y     # Rebuild (runs build steps including WPCS install)
 lando phpcs .                  # Run PHPCS against the codebase
 lando phpcbf .                 # Auto-fix coding standard violations
 
-# Grunt tasks
-lando npm install              # Install Node dependencies
-lando npx grunt                # Run default task (readme + pot generation)
-lando npx grunt wp_readme_to_markdown  # Convert readme.txt to README.md
-lando npx grunt makepot        # Generate translation template (.pot)
+# Or via Composer (used in CI)
+composer install               # Install dev dependencies (WPCS, PHPUnit polyfills)
+vendor/bin/phpcs               # Run PHPCS
+
+# i18n
+wp i18n make-pot . languages/shortcode-widget.pot --slug=shortcode-widget  # Generate .pot file
 ```
 
 ## Coding Standards
 
 - WordPress Coding Standards (WPCS 3.0) enforced via PHPCS
-- Configuration in `.phpcs.xml.dist`
+- Configuration in `phpcs.xml`
 - Text domain: `shortcode-widget`
 - Class prefix: `Shortcode_Widget`
 - All PHP code must pass `lando phpcs .` before committing
@@ -70,28 +71,29 @@ bash bin/install-wp-tests.sh wordpress_test root '' localhost latest
 phpunit
 ```
 
-**CI matrix:** Tests run across PHP 5.6-8.0 and WordPress 3.8 through nightly on both Travis CI and GitLab CI.
+**CI matrix:** Tests run across PHP 7.4-8.3 and WordPress 6.0 through nightly on GitHub Actions.
 
 ## CI/CD
 
-- **Travis CI** (`.travis.yml`): PHPCS verification + PHPUnit test matrix
-- **GitLab CI** (`.gitlab-ci.yml`): PHPCS verification + PHPUnit test matrix + manual deployment to GitLab
+- **GitHub Actions** (`.github/workflows/ci.yml`): PHPCS verification + PHPUnit test matrix (PHP 7.4-8.3 × WP latest/6.5/6.0/nightly)
+- **GitHub Actions** (`.github/workflows/deploy.yml`): Automatic deployment to WordPress.org SVN on tag push (uses `10up/action-wordpress-plugin-deploy`)
+- **Dependabot** (`.github/dependabot.yml`): Keeps GitHub Actions versions up to date
 
-Both CI pipelines run a verify stage (PHPCS) before the test stage.
+The CI workflow runs PHPCS first, then PHPUnit across the matrix (including multisite).
 
 ## i18n
 
 - Text domain: `shortcode-widget`, domain path: `/languages`
-- POT file generated via `grunt makepot`
+- POT file generated via `wp i18n make-pot`
 - All user-facing strings must be wrapped in WordPress i18n functions (`__()`, `_e()`, `esc_html__()`, etc.)
 
 ## Key Conventions
 
-- `README.md` is auto-generated from `readme.txt` — edit `readme.txt` instead
+- `README.md` badges and header are maintained manually; content mirrors `readme.txt`
 - Plugin follows WordPress widget API patterns (`WP_Widget` subclass)
 - No external PHP dependencies; plugin is self-contained
-- Node dependencies are dev-only (Grunt for build tasks)
-- Git remotes: GitHub (`github`) and GitLab (`origin`)
+- Composer dev dependencies are for CI only (WPCS, PHPUnit polyfills)
+- Git remote: GitHub (`origin`)
 - Main branch: `master`
 
 ## Git Commit Guidelines

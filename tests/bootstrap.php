@@ -24,7 +24,7 @@ require_once $shortcode_widget_tests_dir . '/includes/functions.php';
  * Manually load the plugin being tested.
  */
 function shortcode_widget_manually_load_plugin() {
-	require dirname( dirname( __FILE__ ) ) . '/shortcode-widget.php';
+	require dirname( __DIR__ ) . '/shortcode-widget.php';
 }
 tests_add_filter( 'muplugins_loaded', 'shortcode_widget_manually_load_plugin' );
 

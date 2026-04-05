@@ -121,10 +121,8 @@ if ( ! class_exists( 'Shortcode_Widget_Plugin' ) ) {
 		public function test_widget() {
 			return __( 'It works', 'shortcode-widget' );
 		}
-
 	}
 
 	/** Initialises an object of this class */
 	Shortcode_Widget_Plugin::get_instance();
 }
-

@@ -80,19 +80,19 @@ class Test_Shortcode_Widget extends WP_UnitTestCase {
 		ob_start();
 		$widget->widget( $args, $instance );
 		$output = ob_get_clean();
-		$this->assertNotContains( '<p>', $output );
-		$this->assertNotContains( '<br />', $output );
+		$this->assertStringNotContainsString( '<p>', $output );
+		$this->assertStringNotContainsString( '<br />', $output );
 		$this->assertNotNull( $this->shortcode_widget_args );
 		$this->assertNotEmpty( $this->shortcode_widget_args );
 		$this->assertCount( 3, $this->shortcode_widget_args );
-		$this->assertContains( '[filter:shortcode_widget]', $output );
+		$this->assertStringContainsString( '[filter:shortcode_widget]', $output );
 		$this->assertNotNull( $this->shortcode_widget_title_args );
 		$this->assertNotEmpty( $this->shortcode_widget_title_args );
 		$this->assertCount( 3, $this->shortcode_widget_title_args );
 		$this->assertEquals( $instance['title'], $this->shortcode_widget_title_args[0] );
 		$this->assertEquals( $instance, $this->shortcode_widget_title_args[1] );
 		$this->assertEquals( 'shortcode-widget', $this->shortcode_widget_title_args[2] );
-		$this->assertContains( '[filter:shortcode_widget_title]', $output );
+		$this->assertStringContainsString( '[filter:shortcode_widget_title]', $output );
 
 		// Test with filter=true, implicit legacy mode.
 		$this->shortcode_widget_args       = null;
@@ -105,22 +105,22 @@ class Test_Shortcode_Widget extends WP_UnitTestCase {
 		ob_start();
 		$widget->widget( $args, $instance );
 		$output = ob_get_clean();
-		$this->assertContains( '<p>', $output );
-		$this->assertContains( '<br />', $output );
+		$this->assertStringContainsString( '<p>', $output );
+		$this->assertStringContainsString( '<br />', $output );
 		$this->assertNotNull( $this->shortcode_widget_args );
 		$this->assertNotEmpty( $this->shortcode_widget_args );
 		$this->assertCount( 3, $this->shortcode_widget_args );
 		$this->assertEquals( $instance['text'], $this->shortcode_widget_args[0] );
 		$this->assertEquals( $instance, $this->shortcode_widget_args[1] );
 		$this->assertEquals( $widget, $this->shortcode_widget_args[2] );
-		$this->assertContains( '[filter:shortcode_widget]', $output );
+		$this->assertStringContainsString( '[filter:shortcode_widget]', $output );
 		$this->assertNotNull( $this->shortcode_widget_title_args );
 		$this->assertNotEmpty( $this->shortcode_widget_title_args );
 		$this->assertCount( 3, $this->shortcode_widget_title_args );
 		$this->assertEquals( $instance['title'], $this->shortcode_widget_title_args[0] );
 		$this->assertEquals( $instance, $this->shortcode_widget_title_args[1] );
 		$this->assertEquals( 'shortcode-widget', $this->shortcode_widget_title_args[2] );
-		$this->assertContains( '[filter:shortcode_widget_title]', $output );
+		$this->assertStringContainsString( '[filter:shortcode_widget_title]', $output );
 
 		// Test with filter=content, the upgraded widget, in 4.8.0 only.
 		$this->shortcode_widget_args       = null;
@@ -139,20 +139,20 @@ class Test_Shortcode_Widget extends WP_UnitTestCase {
 		ob_start();
 		$widget->widget( $args, $instance );
 		$output = ob_get_clean();
-		$this->assertContains( '<p>', $output );
-		$this->assertContains( '<br />', $output );
+		$this->assertStringContainsString( '<p>', $output );
+		$this->assertStringContainsString( '<br />', $output );
 		$this->assertCount( 3, $this->shortcode_widget_args );
 		$this->assertEquals( $expected_instance['text'], $this->shortcode_widget_args[0] );
 		$this->assertEquals( $expected_instance, $this->shortcode_widget_args[1] );
 		$this->assertEquals( $widget, $this->shortcode_widget_args[2] );
-		$this->assertContains( wpautop( $expected_instance['text'] . '[filter:shortcode_widget]' ), $output );
+		$this->assertStringContainsString( wpautop( $expected_instance['text'] . '[filter:shortcode_widget]' ), $output );
 		$this->assertNotNull( $this->shortcode_widget_title_args );
 		$this->assertNotEmpty( $this->shortcode_widget_title_args );
 		$this->assertCount( 3, $this->shortcode_widget_title_args );
 		$this->assertEquals( $instance['title'], $this->shortcode_widget_title_args[0] );
 		$this->assertEquals( $expected_instance, $this->shortcode_widget_title_args[1] );
 		$this->assertEquals( 'shortcode-widget', $this->shortcode_widget_title_args[2] );
-		$this->assertContains( '[filter:shortcode_widget_title]', $output );
+		$this->assertStringContainsString( '[filter:shortcode_widget_title]', $output );
 
 		// Test with test shortcode [shortcode_widget_test].
 		$this->shortcode_widget_args       = null;
@@ -165,19 +165,19 @@ class Test_Shortcode_Widget extends WP_UnitTestCase {
 		ob_start();
 		$widget->widget( $args, $instance );
 		$output = ob_get_clean();
-		$this->assertNotContains( '<p>', $output );
-		$this->assertNotContains( '<br />', $output );
+		$this->assertStringNotContainsString( '<p>', $output );
+		$this->assertStringNotContainsString( '<br />', $output );
 		$this->assertNotNull( $this->shortcode_widget_args );
 		$this->assertNotEmpty( $this->shortcode_widget_args );
 		$this->assertCount( 3, $this->shortcode_widget_args );
-		$this->assertContains( 'It works[filter:shortcode_widget]', $output );
+		$this->assertStringContainsString( 'It works[filter:shortcode_widget]', $output );
 		$this->assertNotNull( $this->shortcode_widget_title_args );
 		$this->assertNotEmpty( $this->shortcode_widget_title_args );
 		$this->assertCount( 3, $this->shortcode_widget_title_args );
 		$this->assertEquals( $instance['title'], $this->shortcode_widget_title_args[0] );
 		$this->assertEquals( $instance, $this->shortcode_widget_title_args[1] );
 		$this->assertEquals( 'shortcode-widget', $this->shortcode_widget_title_args[2] );
-		$this->assertContains( '[filter:shortcode_widget_title]', $output );
+		$this->assertStringContainsString( '[filter:shortcode_widget_title]', $output );
 	}
 
 	/**
@@ -252,9 +252,9 @@ class Test_Shortcode_Widget extends WP_UnitTestCase {
 		$expected_content_field  = '<p><label for="widget-shortcode-widget--text">Content:</label>
 				<textarea class="widefat" rows="16" cols="20" id="widget-shortcode-widget--text" name="widget-shortcode-widget[][text]">' . $text . '</textarea></p>';
 		$expected_checkbox_field = '<p><input id="widget-shortcode-widget--filter" name="widget-shortcode-widget[][filter]" type="checkbox"  />&nbsp;<label for="widget-shortcode-widget--filter">Automatically add paragraphs</label></p>';
-		$this->assertContains( $expected_title_field, $form_output );
-		$this->assertContains( $expected_content_field, $form_output );
-		$this->assertContains( $expected_checkbox_field, $form_output );
+		$this->assertStringContainsString( $expected_title_field, $form_output );
+		$this->assertStringContainsString( $expected_content_field, $form_output );
+		$this->assertStringContainsString( $expected_checkbox_field, $form_output );
 	}
 
 	/**
