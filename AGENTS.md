@@ -22,7 +22,7 @@ tests/                  # PHPUnit test suite
 languages/              # i18n translation files (.pot)
 assets/                 # Plugin icons and screenshots
 bin/                    # Build and deployment scripts
-.lando/                 # Lando local dev config (php.ini, mysql.cnf, xdebug.sh, wp-cli.yml)
+.lando/                 # Lando local dev config (php.ini, mysql.cnf, nginx.conf, xdebug.sh, wp-cli.yml)
 ```
 
 ## Local Development
@@ -32,9 +32,14 @@ This project uses [Lando](https://lando.dev/) for local development.
 ```bash
 lando start          # Start the environment
 lando rebuild -y     # Rebuild (runs build steps including WPCS install)
+lando xdebug debug   # Enable Xdebug in a mode (`lando xdebug off` to disable)
 ```
 
-**WordPress admin:** https://shortcode-widget.lndo.site/wp-admin/ (`admin` / `password`)
+Stack: PHP 8.4 (nginx), MariaDB 10.11, WordPress core pinned via `WP_VERSION` in `.lando.yml`, Node 24 inside the appserver, Mailpit for outgoing mail.
+
+**WordPress admin:** https://shortcode-widget.lndo.site/wp-admin/ (user `admin`). The password is generated on first start and printed in the `lando start` output; set `WP_ADMIN_PASSWORD` in a gitignored `.lando.local.yml` to choose your own, or reset it with `lando wp user update admin --user_pass=<new>`.
+
+**Mail:** https://shortcode-widget-mail.lndo.site/ (Mailpit captures everything WordPress sends).
 
 ## Build & Tooling Commands
 

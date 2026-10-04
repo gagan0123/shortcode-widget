@@ -3,3 +3,4 @@ node_modules/
 /wordpress
 /.idea
 /profiler-output/
+.lando.local.yml
